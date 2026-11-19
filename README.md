@@ -172,15 +172,8 @@ sending/calling out. To test real payments, set `RAZORPAY_KEY_ID` / `RAZORPAY_KE
 `NEXT_PUBLIC_RAZORPAY_KEY_ID` to test-mode keys from your Razorpay dashboard, then use Razorpay's
 test card (`4111 1111 1111 1111`, any future expiry/CVV) or UPI simulator at checkout.
 
+## Setup notes
 
----
-
-## Project status (added by the audit)
-
-Audited, hardened and verified: booking, payment, refund, cancellation, webhook and auth rules are covered by a
-real-database test suite (`npx vitest run`) and a live end-to-end run against the production build. The
-"Not yet built" list above is otherwise still accurate, except that **automated tests now exist**.
-
-- **Run it:** see [How to run.md](How%20to%20run.md) (note `npm install --legacy-peer-deps`).
-- **Architecture, rules, what was fixed, what is still open:** see [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md).
-- **New environment settings** (payments safety, webhooks, cron, proxies): see `.env.example`.
+- Install with `npm install --legacy-peer-deps`, then `npx prisma migrate deploy` and one of the seed tiers described above.
+- Payments: with no Razorpay or Stripe key, bookings are confirmed automatically in development only; in production the app refuses to take bookings unless a provider is configured (or `ALLOW_DEMO_PAYMENTS=true` is set on purpose).
+- Production settings (webhooks, cron secret, number of proxies) are documented in `.env.example`.

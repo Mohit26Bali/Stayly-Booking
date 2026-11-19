@@ -42,3 +42,32 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated/prisma
+
+# ============================================================
+# Kept on this machine only - not published to GitHub.
+# GitHub gets the code and the README; the rest stays in this folder.
+# ============================================================
+_local/
+CLAUDE.md
+AGENTS.md
+PROJECT_CONTEXT.md
+How to run.md
+.claude/
+.agents/
+.windsurf/
+.cursor/
+skills-lock.json
+.vscode/
+.idea/
+desktop.ini
+Thumbs.db
+*.log
+src/test/
+tests/
+*.test.ts
+*.test.tsx
+*.test.js
+*.spec.ts
+*.spec.js
+vitest.config.*
+docs/
